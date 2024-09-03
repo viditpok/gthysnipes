@@ -308,8 +308,16 @@
             }
 
             // Update the Rank column after sorting
+            let rank = 1;
             for (i = 1; i < rows.length; i++) {
-                rows[i].getElementsByTagName("TD")[0].innerHTML = i + 'th';
+                if (i > 1 && rows[i].getAttribute('data-score') == rows[i - 1].getAttribute('data-score')) {
+                    // If the current score is the same as the previous row, assign the same rank
+                    rows[i].getElementsByTagName("TD")[0].innerHTML = rows[i - 1].getElementsByTagName("TD")[0].innerHTML;
+                } else {
+                    // Otherwise, assign the current rank
+                    rows[i].getElementsByTagName("TD")[0].innerHTML = rank + 'th';
+                }
+                rank++;
             }
         }
 
@@ -317,6 +325,7 @@
         window.onload = function () {
             sortTable();
         };
+
     </script>
 
     <footer>
