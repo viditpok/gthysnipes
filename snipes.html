@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snipes Ranking</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: #f8cecc;
+            cursor: pointer;
+        }
+        td.highlight {
+            background-color: #fdfd96;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Snipes Ranking</h1>
+
+    <table id="snipesTable">
+        <thead>
+            <tr>
+                <th onclick="sortTable(1)">Rank</th>
+                <th onclick="sortTable(2)">Name</th>
+                <th onclick="sortTable(3)">Snipes Taken</th>
+                <th onclick="sortTable(4)">Snipes Given</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td></td>
+                <td>Platon Nesmeyanov</td>
+                <td>132</td>
+                <td>100</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Andy Li</td>
+                <td>131</td>
+                <td>95</td>
+            </tr>
+            <tr class="highlight">
+                <td></td>
+                <td>Arnav Bhatia</td>
+                <td>130</td>
+                <td>90</td>
+            </tr>
+            <!-- Continue adding rows as needed -->
+        </tbody>
+    </table>
+
+    <script>
+        function sortTable(n) {
+            var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+            table = document.getElementById("snipesTable");
+            switching = true;
+            dir = "desc"; // Set the sorting direction to descending
+
+            while (switching) {
+                switching = false;
+                rows = table.rows;
+                for (i = 1; i < (rows.length - 1); i++) {
+                    shouldSwitch = false;
+                    x = rows[i].getElementsByTagName("TD")[n];
+                    y = rows[i + 1].getElementsByTagName("TD")[n];
+                    if (dir == "desc") {
+                        if (parseInt(x.innerHTML) < parseInt(y.innerHTML)) {
+                            shouldSwitch = true;
+                            break;
+                        }
+                    } else if (dir == "asc") {
+                        if (parseInt(x.innerHTML) > parseInt(y.innerHTML)) {
+                            shouldSwitch = true;
+                            break;
+                        }
+                    }
+                }
+                if (shouldSwitch) {
+                    rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                    switching = true;
+                    switchcount++;
+                } else {
+                    if (switchcount == 0 && dir == "desc") {
+                        dir = "asc";
+                        switching = true;
+                    }
+                }
+            }
+
+            // Update the Rank column after sorting
+            for (i = 1; i < rows.length; i++) {
+                rows[i].getElementsByTagName("TD")[0].innerHTML = i + 'th';
+            }
+        }
+
+        // Automatically sort the table on page load
+        window.onload = function() {
+            sortTable(2); // 2 is the index for Snipes Taken
+        };
+    </script>
+
+</body>
+</html>
