@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,23 +10,28 @@
             width: 100%;
             border-collapse: collapse;
         }
-        th, td {
+
+        th,
+        td {
             border: 1px solid black;
             padding: 8px;
             text-align: center;
         }
+
         th {
-            background-color: #f8cecc;
+            background-color: #F4C430;
             cursor: pointer;
         }
+
         td.highlight {
             background-color: #fdfd96;
         }
     </style>
 </head>
+
 <body>
 
-    <h1>Snipes Ranking</h1>
+    <h1 style="text-align: center;">Snipes Ranking</h1>
 
     <table id="snipesTable">
         <thead>
@@ -34,61 +40,256 @@
                 <th onclick="sortTable(2)">Name</th>
                 <th onclick="sortTable(3)">Snipes Taken</th>
                 <th onclick="sortTable(4)">Snipes Given</th>
+                <th onclick="sortTable(5)">Total Score</th>
             </tr>
         </thead>
         <tbody>
-            <tr><td></td><td>Amrutha Balla</td><td>0</td><td>0</td></tr>
-            <tr><td></td><td>Anushka Ramisetty</td><td>0</td><td>0</td></tr>
-            <tr><td></td><td>Avanti Sivakumar</td><td>0</td><td>0</td></tr>
-            <tr><td></td><td>Chinmayi Kompella</td><td>0</td><td>0</td></tr>
-            <tr><td></td><td>Devanshi Bhargava</td><td>0</td><td>0</td></tr>
-            <tr><td></td><td>Dhruv Adha</td><td>0</td><td>0</td></tr>
-            <tr><td></td><td>Gayatri Kumar</td><td>0</td><td>0</td></tr>
-            <tr><td></td><td>Ishita Raghuvanshi</td><td>0</td><td>0</td></tr>
-            <tr><td></td><td>Ishwarya Sundharajan</td><td>0</td><td>0</td></tr>
-            <tr><td></td><td>Karishma Kamalahasan</td><td>0</td><td>0</td></tr>
-            <tr><td></td><td>Mohit Pinninti</td><td>0</td><td>0</td></tr>
-            <tr><td></td><td>Nandini Ramakrishnan</td><td>0</td><td>0</td></tr>
-            <tr><td></td><td>Neha Koganti</td><td>0</td><td>0</td></tr>
-            <tr><td></td><td>Prajval Sharma</td><td>0</td><td>0</td></tr>
-            <tr><td></td><td>Prashant Limaye</td><td>0</td><td>0</td></tr>
-            <tr><td></td><td>Rajat Gupta</td><td>0</td><td>0</td></tr>
-            <tr><td></td><td>Rasagna Vupalla</td><td>0</td><td>0</td></tr>
-            <tr><td></td><td>Samyukta Iyer</td><td>0</td><td>0</td></tr>
-            <tr><td></td><td>Shaambhav Dave</td><td>0</td><td>0</td></tr>
-            <tr><td></td><td>Shreya (Shriya) Kilambi</td><td>0</td><td>0</td></tr>
-            <tr><td></td><td>Shreya Tangirala</td><td>0</td><td>0</td></tr>
-            <tr><td></td><td>Soham Kinhikar</td><td>0</td><td>0</td></tr>
-            <tr><td></td><td>Someet Chintam</td><td>0</td><td>0</td></tr>
-            <tr><td></td><td>Srihith Pallamreddy</td><td>0</td><td>0</td></tr>
-            <tr><td></td><td>Suhaas Bonkur</td><td>0</td><td>0</td></tr>
-            <tr><td></td><td>Vidit Pokharna</td><td>0</td><td>0</td></tr>
-            <tr><td></td><td>Yashasvi Karri</td><td>0</td><td>0</td></tr>
-            <tr><td></td><td>Yesha Raval</td><td>0</td><td>0</td></tr>
+            <tr>
+                <td></td>
+                <td>Amrutha Balla</td>
+                <td>0</td>
+                <td>0</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Anushka Ramisetty</td>
+                <td>0</td>
+                <td>2</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Avanti Sivakumar</td>
+                <td>0</td>
+                <td>0</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Charu Chaturvedi</td>
+                <td>0</td>
+                <td>0</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Chinmayi Kompella</td>
+                <td>0</td>
+                <td>0</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Devanshi Bhargava</td>
+                <td>0</td>
+                <td>0</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Dhruv Adha</td>
+                <td>0</td>
+                <td>0</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Gayatri Kumar</td>
+                <td>0</td>
+                <td>0</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Ishita Raghuvanshi</td>
+                <td>1</td>
+                <td>1</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Ishwarya Sundharajan</td>
+                <td>0</td>
+                <td>0</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Karishma Kamalahasan</td>
+                <td>3</td>
+                <td>3</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Mohit Pinninti</td>
+                <td>0</td>
+                <td>2</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Nandini Ramakrishnan</td>
+                <td>3</td>
+                <td>5</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Neha Koganti</td>
+                <td>3</td>
+                <td>2</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Prajval Sharma</td>
+                <td>0</td>
+                <td>1</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Prashant Limaye</td>
+                <td>0</td>
+                <td>0</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Rajat Gupta</td>
+                <td>0</td>
+                <td>0</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Rasagna Vupalla</td>
+                <td>1</td>
+                <td>0</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Samyukta Iyer</td>
+                <td>0</td>
+                <td>0</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Shaambhav Dave</td>
+                <td>3</td>
+                <td>1</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Shriya Kilambi</td>
+                <td>0</td>
+                <td>0</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Shreya Tangirala</td>
+                <td>1</td>
+                <td>1</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Soham Kinhikar</td>
+                <td>0</td>
+                <td>0</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Someet Chintam</td>
+                <td>0</td>
+                <td>2</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Srihith Pallamreddy</td>
+                <td>0</td>
+                <td>0</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Suhaas Bonkur</td>
+                <td>0</td>
+                <td>0</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Vidit Pokharna</td>
+                <td>4</td>
+                <td>0</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Yashasvi Karri</td>
+                <td>2</td>
+                <td>1</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Yesha Raval</td>
+                <td>0</td>
+                <td>0</td>
+                <td></td>
+            </tr>
         </tbody>
     </table>
 
     <script>
-        function sortTable(n) {
+        function calculateTotalScore(taken, given) {
+            // Calculate the total score
+            return taken - given;
+        }
+
+        function sortTable() {
             var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
             table = document.getElementById("snipesTable");
             switching = true;
             dir = "desc"; // Set the sorting direction to descending
+
+            // Calculate the total score for each row and add it to the last column
+            rows = table.rows;
+            for (i = 1; i < rows.length; i++) {
+                var taken = parseInt(rows[i].getElementsByTagName("TD")[2].innerHTML);
+                var given = parseInt(rows[i].getElementsByTagName("TD")[3].innerHTML);
+                var totalScore = calculateTotalScore(taken, given);
+                if (taken === 0 && given === 0) {
+                    // If both taken and given are zero, set score to -Infinity to push to the bottom
+                    totalScore = -Infinity;
+                }
+                rows[i].setAttribute('data-score', totalScore); // Store the actual score as a data attribute
+                rows[i].getElementsByTagName("TD")[4].innerHTML = (totalScore === -Infinity) ? '-' : totalScore;
+            }
 
             while (switching) {
                 switching = false;
                 rows = table.rows;
                 for (i = 1; i < (rows.length - 1); i++) {
                     shouldSwitch = false;
-                    x = rows[i].getElementsByTagName("TD")[n];
-                    y = rows[i + 1].getElementsByTagName("TD")[n];
+                    x = parseFloat(rows[i].getAttribute('data-score')); // Use the actual score for comparison
+                    y = parseFloat(rows[i + 1].getAttribute('data-score'));
                     if (dir == "desc") {
-                        if (parseInt(x.innerHTML) < parseInt(y.innerHTML)) {
+                        if (x < y) {
                             shouldSwitch = true;
                             break;
                         }
                     } else if (dir == "asc") {
-                        if (parseInt(x.innerHTML) > parseInt(y.innerHTML)) {
+                        if (x > y) {
                             shouldSwitch = true;
                             break;
                         }
@@ -113,8 +314,8 @@
         }
 
         // Automatically sort the table on page load
-        window.onload = function() {
-            sortTable(2); // 2 is the index for Snipes Taken
+        window.onload = function () {
+            sortTable();
         };
     </script>
 
@@ -123,4 +324,5 @@
     </footer>
 
 </body>
+
 </html>
